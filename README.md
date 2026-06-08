@@ -8,40 +8,48 @@ This repository contains one agent skill:
 
 The skill is designed for agents that support `SKILL.md`-based skill folders, including Codex, Claude Code, and other tools compatible with the open agent skills format.
 
+GitHub repository: <https://github.com/figboard/skills>
+
 ## Install
 
 Install from GitHub with `npx skills add`:
 
 ```bash
-npx skills add https://github.com/<owner>/<repo> --skill generating-figboard-diagrams
+npx skills add https://github.com/figboard/skills --skill generating-figboard-diagrams
 ```
 
 You can also use the GitHub shorthand:
 
 ```bash
-npx skills add <owner>/<repo> --skill generating-figboard-diagrams
+npx skills add figboard/skills --skill generating-figboard-diagrams
+```
+
+Or install directly from the skill folder URL:
+
+```bash
+npx skills add https://github.com/figboard/skills/tree/main/generating-figboard-diagrams
 ```
 
 Install globally:
 
 ```bash
-npx skills add <owner>/<repo> --skill generating-figboard-diagrams -g
+npx skills add figboard/skills --skill generating-figboard-diagrams -g
 ```
 
 Install for a specific agent:
 
 ```bash
-npx skills add <owner>/<repo> --skill generating-figboard-diagrams -a codex
-npx skills add <owner>/<repo> --skill generating-figboard-diagrams -a claude-code
+npx skills add figboard/skills --skill generating-figboard-diagrams -a codex
+npx skills add figboard/skills --skill generating-figboard-diagrams -a claude-code
 ```
 
 List available skills before installing:
 
 ```bash
-npx skills add <owner>/<repo> --list
+npx skills add figboard/skills --list
 ```
 
-If this repository is not published yet, install from a local path:
+For local development, install from a local path:
 
 ```bash
 npx skills add /path/to/skills --skill generating-figboard-diagrams
@@ -117,40 +125,48 @@ figboard files create --from-file <path>
 
 这个 skill 适用于支持 `SKILL.md` skill 目录格式的 agent，例如 Codex、Claude Code，以及兼容开放 agent skills 格式的其他工具。
 
+GitHub 仓库：<https://github.com/figboard/skills>
+
 ## 安装
 
 通过 `npx skills add` 从 GitHub 安装：
 
 ```bash
-npx skills add https://github.com/<owner>/<repo> --skill generating-figboard-diagrams
+npx skills add https://github.com/figboard/skills --skill generating-figboard-diagrams
 ```
 
 也可以使用 GitHub 简写：
 
 ```bash
-npx skills add <owner>/<repo> --skill generating-figboard-diagrams
+npx skills add figboard/skills --skill generating-figboard-diagrams
+```
+
+也可以直接指向 skill 目录 URL：
+
+```bash
+npx skills add https://github.com/figboard/skills/tree/main/generating-figboard-diagrams
 ```
 
 全局安装：
 
 ```bash
-npx skills add <owner>/<repo> --skill generating-figboard-diagrams -g
+npx skills add figboard/skills --skill generating-figboard-diagrams -g
 ```
 
 安装到指定 agent：
 
 ```bash
-npx skills add <owner>/<repo> --skill generating-figboard-diagrams -a codex
-npx skills add <owner>/<repo> --skill generating-figboard-diagrams -a claude-code
+npx skills add figboard/skills --skill generating-figboard-diagrams -a codex
+npx skills add figboard/skills --skill generating-figboard-diagrams -a claude-code
 ```
 
 安装前查看仓库中可识别的 skills：
 
 ```bash
-npx skills add <owner>/<repo> --list
+npx skills add figboard/skills --list
 ```
 
-如果仓库还没有发布到 GitHub，也可以从本地路径安装：
+本地开发时，也可以从本地路径安装：
 
 ```bash
 npx skills add /path/to/skills --skill generating-figboard-diagrams
