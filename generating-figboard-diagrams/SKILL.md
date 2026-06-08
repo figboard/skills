@@ -7,6 +7,17 @@ description: Generates FigBoard-compatible JSON for React Flow diagrams (flowcha
 
 Generate JSON content for FigBoard (飞格图板) — a scientific figure assembly tool built on React Flow (@xyflow/react). Supports two file kinds: **flow** (flowcharts/diagrams) and **figure** (multi-panel publication figures).
 
+## CLI Readiness
+
+Before any FigBoard generation or import task, ensure the latest `@figboard/cli` is installed and available:
+
+1. Check the latest published version: `npm view @figboard/cli version`
+2. Check the local CLI version: `figboard --version`
+3. If `figboard` is missing or older than the latest published version, install/update it: `npm install -g @figboard/cli@latest`
+4. Re-run `figboard --version` and continue only after the command succeeds.
+
+If a global install is not appropriate in the current environment, use `npx -y @figboard/cli@latest ...` for FigBoard CLI commands.
+
 ## Quick Decision
 
 | User asks for | Kind | Top-level format |
@@ -121,11 +132,12 @@ Types: `bar`, `line`, `volcano`, `box`, `heatmap`. Deterministic seeded RNG.
 
 ## Workflow
 
-1. Understand user's diagram needs
-2. Generate `FileContentDto` JSON following above formats
-3. Compute and set correct `stats` counts
-4. Write to `.json` file
-5. Import: `figboard files create --from-file <path>` (CLI) or web UI raw import
+1. Check/install the latest `@figboard/cli` as described in CLI Readiness
+2. Understand user's diagram needs
+3. Generate `FileContentDto` JSON following above formats
+4. Compute and set correct `stats` counts
+5. Write to `.json` file
+6. Import: `figboard files create --from-file <path>` (CLI) or web UI raw import
 
 ## References
 
