@@ -9,14 +9,20 @@ Generate JSON content for FigBoard (飞格图板) — a scientific figure assemb
 
 ## CLI Readiness
 
-Before any FigBoard generation or import task, ensure the latest `@figboard/cli` is installed and available:
+Before any FigBoard generation or import task, ensure the latest `@figboard/cli` is installed, available, and authenticated:
 
 1. Check the latest published version: `npm view @figboard/cli version`
 2. Check the local CLI version: `figboard --version`
 3. If `figboard` is missing or older than the latest published version, install/update it: `npm install -g @figboard/cli@latest`
 4. Re-run `figboard --version` and continue only after the command succeeds.
+5. Check token configuration: `figboard whoami`
+6. If `figboard whoami` fails because no token is configured, tell the user to create a FigBoard Personal Access Token in FigBoard Web at Personal Settings -> Access Tokens, then configure it with either:
+   - `figboard login --token fbp_xxxxxxxxxxxx`
+   - `export FIGBOARD_TOKEN=fbp_xxxxxxxxxxxx`
 
 If a global install is not appropriate in the current environment, use `npx -y @figboard/cli@latest ...` for FigBoard CLI commands.
+
+For token-dependent commands, the CLI reads credentials in this order: `--token`, `FIGBOARD_TOKEN`, then local config saved by `figboard login`. Minimum scopes: `me:read` for `whoami`, `files:write` for `files create`, `files:read` for listing files, and `assets:write` for uploads.
 
 ## Quick Decision
 
